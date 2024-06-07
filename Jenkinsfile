@@ -2,22 +2,21 @@ pipeline {
   agent any
 
   stages {
-    stage('Build') {
+    stage('build') {
       steps {
-        echo "Building the application..."
+        echo 'Building the application...'
         sh 'mvn clean package -DskipTests'
       }
     }
-    stage('Test') {
+    stage('test') {
       steps {
-        echo "Testing the application..."
-        // Add your testing steps here
+        echo 'Testing the application...'
       }
     }
-    stage('Deploy') {
+    stage('deploy') {
       steps {
-        echo "Deploying the application..."
-        // Add your deployment steps here
+        echo 'Deploying the application...'
+        
       }
     }
   }

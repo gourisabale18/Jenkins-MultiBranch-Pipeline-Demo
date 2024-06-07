@@ -1,25 +1,24 @@
-pipeline{
+pipeline {
   agent any
 
-  stages{
-    stage("build"){
-      steps{
-        echo('Building the application...')
+  stages {
+    stage('Build') {
+      steps {
+        echo "Building the application..."
         sh 'mvn clean package -DskipTests'
       }
     }
-     stage("test"){
-      steps{
-         echo('Testing the application...')
+    stage('Test') {
+      steps {
+        echo "Testing the application..."
+        // Add your testing steps here
       }
     }
-    stage("deploy"){
-      steps{
-         echo('Deploying the application...')
+    stage('Deploy') {
+      steps {
+        echo "Deploying the application..."
+        // Add your deployment steps here
       }
     }
-    
-
   }
-
 }

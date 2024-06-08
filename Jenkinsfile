@@ -4,8 +4,9 @@ pipeline {
   stages {
     stage("build") {
       steps {
-        echo 'Building the application...'
-        sh 'mvn clean package -DskipTests'
+        container ('maven'){
+          sh 'mvn clean package'
+        }
       }
     }
     stage("test") {
